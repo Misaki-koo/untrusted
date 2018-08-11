@@ -18,9 +18,11 @@ function Game(debugMode, startLevel) {
 
     this._bonusLevels = [
 //%BONUS%
-    ].filter(function (lvl) { return (lvl.indexOf('_') != 0); }); // filter out bonus levels that start with '_'
+    ].filter(function (lvl) {
+        return (lvl.indexOf('_') != 0);
+    }); // filter out bonus levels that start with '_'
 
-	this._mod = '//%MOD%';
+    this._mod = '//%MOD%';
 
     this._viewableScripts = [
         'codeEditor.js',
@@ -56,13 +58,21 @@ function Game(debugMode, startLevel) {
 
     /* unexposed getters */
 
-    this._getHelpCommands = function () { return __commands; };
-    this._isPlayerCodeRunning = function () { return __playerCodeRunning; };
-	this._getLocalKey = function (key) { return (this._mod.length == 0 ? '' : this._mod + '.') + key; };
+    this._getHelpCommands = function () {
+        return __commands;
+    };
+    this._isPlayerCodeRunning = function () {
+        return __playerCodeRunning;
+    };
+    this._getLocalKey = function (key) {
+        return (this._mod.length == 0 ? '' : this._mod + '.') + key;
+    };
 
     /* unexposed setters */
 
-    this._setPlayerCodeRunning = function (pcr) { __playerCodeRunning = pcr; };
+    this._setPlayerCodeRunning = function (pcr) {
+        __playerCodeRunning = pcr;
+    };
 
     /* unexposed methods */
 
@@ -99,8 +109,27 @@ function Game(debugMode, startLevel) {
             display.focus();
         });
 
-        // Initialize editor, map, and objects
-        this.editor = new CodeEditor("editor", 600, 500, this);
+        // Initialize editor, map, and objects and playerId
+        var playerId = "";
+
+        function check_playerId(id) {
+            if (id === "") {
+                return false;
+            } else if (id) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        while (true) {
+            if (check_playerId(playerId)) {
+                break;
+            } else {
+                playerId = prompt("Login as: ", "");
+            }
+        }
+        this.editor = new CodeEditor("editor", 600, 500, playerId, this);
         this.map = new Map(this.display, this);
         this.objects = this.getListOfObjects();
 
@@ -122,6 +151,10 @@ function Game(debugMode, startLevel) {
         if (localStorage.getItem(this._getLocalKey('helpCommands'))) {
             __commands = localStorage.getItem(this._getLocalKey('helpCommands')).split(';');
         }
+
+        // set levels for stage 2
+        this._levelReached = 22;
+
 
         // Enable debug features
         if (debugMode) {
@@ -282,13 +315,13 @@ function Game(debugMode, startLevel) {
         }, 'text');
     };
 
-    this._resetLevel = function( level ) {
+    this._resetLevel = function (level) {
         var game = this;
         var resetTimeout_msec = 2500;
 
-        if ( this._resetTimeout != null ) {
+        if (this._resetTimeout != null) {
             $('body, #buttons').css('background-color', '#000');
-            window.clearTimeout( this._resetTimeout );
+            window.clearTimeout(this._resetTimeout);
             this._resetTimeout = null;
 
             if (game._currentBonusLevel) {
@@ -304,7 +337,7 @@ function Game(debugMode, startLevel) {
                 game._resetTimeout = null;
 
                 $('body, #buttons').css('background-color', '#000');
-            }, resetTimeout_msec );
+            }, resetTimeout_msec);
         }
     };
 
@@ -412,7 +445,7 @@ function Game(debugMode, startLevel) {
         }
     };
 
-    this._callUnexposedMethod = function(f) {
+    this._callUnexposedMethod = function (f) {
         if (__playerCodeRunning) {
             __playerCodeRunning = false;
             res = f();

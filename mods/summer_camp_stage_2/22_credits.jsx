@@ -69,6 +69,17 @@ function startLevel(map) {
         [30, 21, "'Vernon Lenoir',"],
         [15, map.getHeight() - 2, "Thank_you: 'for playing!'"],
         [1, map.getHeight() - 1, "}"],
+        [8, 12, "f"],
+        [9, 12, "l"],
+        [10, 12, "a"],
+        [11, 12, "g"],
+        [12, 12, ":"],
+        [13, 12, "c"],
+        [14, 12, "n"],
+        [15, 12, "s"],
+        [16, 12, "s"],
+        [17, 12, "{"],
+        [18, 12, "you_have_changed_my_mind}"]
     ];
 
     function drawCredits(i) {

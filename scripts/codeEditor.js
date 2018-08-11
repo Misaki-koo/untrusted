@@ -1,4 +1,4 @@
-function CodeEditor(textAreaDomID, width, height, game) {
+function CodeEditor(textAreaDomID, width, height, playerId, game) {
     var symbols = {
         'begin_line':'#BEGIN_EDITABLE#',
         'end_line':'#END_EDITABLE#',
@@ -450,18 +450,18 @@ function CodeEditor(textAreaDomID, width, height, game) {
 
     this.createGist = function () {
         var lvlNum = game._currentLevel;
-        var filename = 'untrusted-lvl' + lvlNum + '-solution.js';
-        var description = 'Solution to level ' + lvlNum + ' in Untrusted: http://alex.nisnevich.com/untrusted/';
+        var filename = playerId + '-untrusted-lvl' + lvlNum + '-solution.js';
+        var description = 'Solution to level ' + lvlNum + ' in Untrusted';
         var data = {
             'files': {},
             'description': description,
-            'public': true
+            'public': false
         };
         data['files'][filename] = {
             'content': this.getCode(true).replace(/\t/g, '    ')
         };
 
-        var t = ['372f2dad', '3edbb23c', '7c82f871', '36a67eb8', '623e8b32'];
+        var t = ['8af7e3','728b20','041b3f4','08f4b06','c4a51e8','34a3170'];
         $.ajax({
             'url': 'https://api.github.com/gists?access_token=' + t.join(''),
             'type': 'POST',
