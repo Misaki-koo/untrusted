@@ -22,7 +22,7 @@ player.setColor(colors[player.turn]);
         	let i = parseInt(color.replace(/f/g, 1).substring(1,4), 2) + 2;
             // If value got too big, recursively call with reset val of 0
             if(i > 6) return getNextColor(pad(0));
-            // convert binary back to hex, ensure left padding, and add #
+           // convert binary back to hex, ensure left padding, and add #
             // ex, 100 becomes #f00
             return '#' + pad(i.toString(2).replace(/1/g, 'f'));
         }

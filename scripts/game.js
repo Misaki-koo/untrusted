@@ -153,7 +153,7 @@ function Game(debugMode, startLevel) {
         }
 
         // set levels for stage 2
-        this._levelReached = 22;
+        // this._levelReached = 21;
 
 
         // Enable debug features
@@ -426,8 +426,8 @@ function Game(debugMode, startLevel) {
                 this.sound.playTrackByName(this.editor.getProperties().music);
             }
 
-            // activate super menu if 21_endOfTheLine has been reached
-            if (this._levelReached >= 21) {
+            // activate super menu if 20_endOfTheLine has been reached
+            if (this._levelReached >= 20) {
                 this.activateSuperMenu();
             }
 
