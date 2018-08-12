@@ -238,12 +238,12 @@ body {
 
 #menuPane {
 	width: 647px;
-	height: 360px;
+	height: 570px;
 }
 
 #menuPane.expanded {
 	width: 785px;
-	height: 500px;
+	height: 570px;
 }
 
 #menuPane.expanded #rightMenuPane {
@@ -253,7 +253,7 @@ body {
 #leftMenuPane {
 	float: left;
 	width: 130px;
-	height: 500px;
+	height: 570px;
 	background: rgb(27, 90, 158);
 	margin-right: 8px;
 	display: none;

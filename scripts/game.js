@@ -153,7 +153,7 @@ function Game(debugMode, startLevel) {
         }
 
         // set levels for stage 2
-        // this._levelReached = 21;
+        this._levelReached = 6;
 
 
         // Enable debug features
@@ -170,7 +170,7 @@ function Game(debugMode, startLevel) {
             this._getLevel(startLevel, debugMode);
         } else if (!debugMode && this._levelReached != 1) {
             // load last level reached (unless it's the credits)
-            this._getLevel(Math.min(this._levelReached, 21));
+            this._getLevel(this._levelReached);
         } else {
             this._intro();
         }

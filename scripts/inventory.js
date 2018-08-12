@@ -40,7 +40,7 @@ Game.prototype.setInventoryStateByLevel = function (levelNum) {
 	if (levelNum == 1) {
 		this.removeFromInventory('computer');
 	}
-	if (levelNum <= 7) {
+	if (levelNum <= 6) {
 		this.removeFromInventory('phone');
 	}
 
@@ -53,29 +53,29 @@ Game.prototype.setInventoryStateByLevel = function (levelNum) {
 		$('#editorPane').fadeIn();
 		this.editor.refresh();
 	}
-	if (levelNum > 7) {
+	if (levelNum > 6) {
 		this.addToInventory('phone');
 		$('#phoneButton').show();
 	}
-	if (levelNum > 11) {
+	if (levelNum > 10) {
 		this.addToInventory('redKey');
 	}
-	if (levelNum > 12) {
+	if (levelNum > 11) {
 		this.addToInventory('greenKey');
 	}
-	if (levelNum > 13) {
+	if (levelNum > 12) {
 		this.addToInventory('blueKey');
 	}
-	if (levelNum > 14) {
+	if (levelNum > 13) {
 		this.addToInventory('theAlgorithm');
 		this.removeFromInventory('redKey');
 		this.removeFromInventory('greenKey');
 		this.removeFromInventory('blueKey');
 	}
-	if (levelNum > 15) {
+	if (levelNum > 14) {
 		this.removeFromInventory('theAlgorithm');
 	}
-	if (levelNum > 20) {
+	if (levelNum > 19) {
 		this.addToInventory('theAlgorithm');
 	}
 
