@@ -31,8 +31,7 @@ function startLevel(map) {
     // NOTE: In this level alone, map.placeObject is allowed to
     //overwrite existing objects.
 
-    map.displayChapter(atob("Q09OR1JBVFVMQVRJT05TICEKQ0hBUFRFUiAxIENMRUFSICEKRkxBRzogY25zc3tKNHZBXzVjcjFwdF8xc19BbTQ3aW45fQ=="));
-
+    map.displayChapter("PROLOGUE CLEAR !\nflag: cnss{js_is_amazing")
     map.placePlayer(2, map.getHeight() - 1);
 
     var functionList = {};
