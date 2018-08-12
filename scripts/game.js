@@ -153,7 +153,7 @@ function Game(debugMode, startLevel) {
         }
 
         // set levels for stage 2
-        this._levelReached = 6;
+        // this._levelReached = 22;
 
 
         // Enable debug features
