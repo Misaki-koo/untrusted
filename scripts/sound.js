@@ -139,9 +139,9 @@ function Sound(source) {
             url: "https://soundcloud.com/tss-tortue-super-sonic"
         },
         'Yuzu': {
-            path: "music/KOTORO.mp3",
+            path: "music/KOTOKO.mp3",
             artist: "",
-            title: "KOTORO - 恋ひ恋ふ縁",
+            title: "KOTOKO - 恋ひ恋ふ縁",
             url: "http://music.163.com/#/m/song?id=473403182"
         }
     };

@@ -10,7 +10,7 @@
  *
  * Congratulations!
  *
- * you have cleared all the stages.
+ * you have cleared all the stages
  *
  * and welcome to JavaScript !
  *
@@ -25,7 +25,8 @@ function startLevel(map) {
         [15, 4, "CONGRATULATIONS !"],
         [19, 6, "ALL CLEAR"],
         [8, 12, "your flag can be downloaded at"],
-        [8, 14, "http://t.cn/RzBcYcS"]
+        [8, 14, "http://t.cn/RzBcYcS"],
+        [8, 18, "相 信 我 ，真 的 不 是 g b f "]
     ];
 
     function drawCredits(i) {
