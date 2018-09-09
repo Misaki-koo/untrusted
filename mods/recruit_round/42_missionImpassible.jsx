@@ -15,8 +15,11 @@
  * missionImpassible.js *
  *************
  *
- * Closure makes javascript amazing,
- * you should know about that.
+ * It is impassible to get pass 10k lasers.
+ * There gotta be another way out.
+ *
+ * Use the  M A G I C
+ *      -- javascript closure.
  */
 
 function getRandomInt(min, max) {
