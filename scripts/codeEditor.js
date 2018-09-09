@@ -450,7 +450,7 @@ function CodeEditor(textAreaDomID, width, height, playerId, game) {
 
     this.createGist = function () {
         var lvlNum = game._currentLevel;
-        var filename = playerId + '-untrusted-lvl' + lvlNum + '-solution.js';
+        var filename = this._playerId + '-untrusted-lvl' + lvlNum + '-solution.js';
         var description = 'Solution to level ' + lvlNum + ' in Untrusted';
         var data = {
             'files': {},

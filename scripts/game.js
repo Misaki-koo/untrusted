@@ -110,7 +110,7 @@ function Game(debugMode, startLevel) {
         });
 
         // Initialize editor, map, and objects and playerId
-        var playerId = "";
+        this._playerId = "";
 
         function check_playerId(id) {
             if (id === "") {
@@ -123,13 +123,13 @@ function Game(debugMode, startLevel) {
         }
 
         while (true) {
-            if (check_playerId(playerId)) {
+            if (check_playerId(this._playerId)) {
                 break;
             } else {
-                playerId = prompt("Login as: ", "");
+                this._playerId = prompt("Login as: ", "");
             }
         }
-        this.editor = new CodeEditor("editor", 600, 500, playerId, this);
+        this.editor = new CodeEditor("editor", 600, 500, this);
         this.map = new Map(this.display, this);
         this.objects = this.getListOfObjects();
 
