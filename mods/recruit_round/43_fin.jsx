@@ -12,7 +12,7 @@
  *
  * you have cleared all the stages
  *
- * and welcome to JavaScript !
+ * welcome to JavaScript !
  *
  * ZmxhZzpjbnNze3VfY2FudF9jaGFuZ2VfbXlfbWluZH0=
  *
