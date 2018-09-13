@@ -14,7 +14,7 @@
  *
  * welcome to JavaScript !
  *
- * ZmxhZzpjbnNze3VfY2FudF9jaGFuZ2VfbXlfbWluZH0=
+ * "ZmxhZzpjbnNze3l1enVzb2Z0X2lzX21vcmVfYW1hemluZ30="
  *
  *             -- CNSS DEV
  */

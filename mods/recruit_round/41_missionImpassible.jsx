@@ -28,6 +28,7 @@ function getRandomInt(min, max) {
 
 function startLevel(map) {
 #START_OF_START_LEVEL#
+    map.displayChapter("MISSION IMPASSIBLE");
     map.placePlayer(0, 0);
     map.placeObject(map.getWidth()-1, map.getHeight()-1, 'exit');
     var player = map.getPlayer();

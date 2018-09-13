@@ -69,7 +69,7 @@ function startLevel(map) {
         [30, 21, "'Vernon Lenoir',"],
         [15, map.getHeight() - 2, "Thank_you: 'for playing!'"],
         [1, map.getHeight() - 1, "}"],
-        [8, 12, atob("ZmxhZzpjbnNze3VfY2FudF9jaGFuZ2VfbXlfbWluZH0=")]
+        [8, 12, atob("ZmxhZzpjbnNze2szZXBfMG5fZ28xbjl9")]
     ];
 
     function drawCredits(i) {

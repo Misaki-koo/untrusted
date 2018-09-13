@@ -69,7 +69,7 @@ function CodeEditor(textAreaDomID, width, height, playerId, game) {
                 propertiesString += currentLine;
             }
             // process editable lines and sections
-              else if (currentLine.indexOf(symbols.begin_line) === 0) {
+            else if (currentLine.indexOf(symbols.begin_line) === 0) {
                 lineArray.splice(i,1);
                 i--;
                 inEditableBlock = true;
@@ -79,19 +79,19 @@ function CodeEditor(textAreaDomID, width, height, playerId, game) {
                 inEditableBlock = false;
             }
             // process start of startLevel()
-              else if (currentLine.indexOf(symbols.start_start_level) === 0) {
+            else if (currentLine.indexOf(symbols.start_start_level) === 0) {
                 lineArray.splice(i,1);
                 startOfStartLevel = i;
                 i--;
             }
             // process end of startLevel()
-              else if (currentLine.indexOf(symbols.end_start_level) === 0) {
+            else if (currentLine.indexOf(symbols.end_start_level) === 0) {
                 lineArray.splice(i,1);
                 endOfStartLevel = i;
                 i--;
             }
             // everything else
-              else {
+            else {
                 if (inEditableBlock) {
                     editableLines.push(i);
                 } else {
@@ -183,7 +183,7 @@ function CodeEditor(textAreaDomID, width, height, playerId, game) {
         if (!inEditableArea(change)) {
             change.cancel();
         } else if (change.to.line < change.from.line ||
-                   change.to.line - change.from.line + 1 > change.text.length) { // Deletion
+            change.to.line - change.from.line + 1 > change.text.length) { // Deletion
             updateEditableLinesOnDeletion(change);
         } else { // Insert/paste
             // First line already editable
@@ -450,7 +450,7 @@ function CodeEditor(textAreaDomID, width, height, playerId, game) {
 
     this.createGist = function () {
         var lvlNum = game._currentLevel;
-        var filename = this._playerId + '-untrusted-lvl' + lvlNum + '-solution.js';
+        var filename = playerId + '-untrusted-lvl' + lvlNum + '-solution.js';
         var description = 'Solution to level ' + lvlNum + ' in Untrusted';
         var data = {
             'files': {},

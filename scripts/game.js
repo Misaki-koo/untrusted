@@ -110,7 +110,7 @@ function Game(debugMode, startLevel) {
         });
 
         // Initialize editor, map, and objects and playerId
-        this._playerId = "";
+        var playerId = "";
 
         function check_playerId(id) {
             if (id === "") {
@@ -123,13 +123,13 @@ function Game(debugMode, startLevel) {
         }
 
         while (true) {
-            if (check_playerId(this._playerId)) {
+            if (check_playerId(playerId)) {
                 break;
             } else {
-                this._playerId = prompt("Login as: ", "");
+                playerId = prompt("Login as: ", "");
             }
         }
-        this.editor = new CodeEditor("editor", 600, 500, this);
+        this.editor = new CodeEditor("editor", 600, 500, playerId, this);
         this.map = new Map(this.display, this);
         this.objects = this.getListOfObjects();
 
@@ -153,7 +153,7 @@ function Game(debugMode, startLevel) {
         }
 
         // set levels for stage 2
-        // this._levelReached = 22;
+        // this._levelReached = 11;
 
 
         // Enable debug features
@@ -170,7 +170,7 @@ function Game(debugMode, startLevel) {
             this._getLevel(startLevel, debugMode);
         } else if (!debugMode && this._levelReached != 1) {
             // load last level reached (unless it's the credits)
-            this._getLevel(this._levelReached);
+            this._getLevel(Math.min(this._levelReached, 21));
         } else {
             this._intro();
         }
@@ -426,8 +426,8 @@ function Game(debugMode, startLevel) {
                 this.sound.playTrackByName(this.editor.getProperties().music);
             }
 
-            // activate super menu if 20_endOfTheLine has been reached
-            if (this._levelReached >= 20) {
+            // activate super menu if 21_endOfTheLine has been reached
+            if (this._levelReached >= 42) {
                 this.activateSuperMenu();
             }
 

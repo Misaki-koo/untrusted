@@ -27,7 +27,7 @@
 
 function startLevel(map) {
 #START_OF_START_LEVEL#
-    map.displayChapter(atob("Q09OR1JBVFVMQVRJT05TICEKQ0hBUFRFUiAyIENMRUFSICEKRkxBRzogY25zc3t1X2NhbnRfY2hhbmdlX215X21pbmR9"));
+    map.displayChapter("There goes the encore stage");
 
     map.defineObject('laser', {
         'type': 'trap',

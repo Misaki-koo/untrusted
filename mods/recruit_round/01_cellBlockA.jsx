@@ -32,7 +32,7 @@
 
 function startLevel(map) {
 #START_OF_START_LEVEL#
-    map.displayChapter('PROLOGUE\nBreakout');
+    map.displayChapter('Chapter 1\nBreakout');
 
     map.placePlayer(7, 5);
 #BEGIN_EDITABLE#
