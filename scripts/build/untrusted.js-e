@@ -283,7 +283,7 @@ function Game(debugMode, startLevel) {
         });
 
         // Initialize editor, map, and objects and playerId
-        var playerId = "";
+        this._playerId = "";
 
         function check_playerId(id) {
             if (id === "") {
@@ -296,13 +296,13 @@ function Game(debugMode, startLevel) {
         }
 
         while (true) {
-            if (check_playerId(playerId)) {
+            if (check_playerId(this._playerId)) {
                 break;
             } else {
-                playerId = prompt("Login as: ", "");
+                this._playerId = prompt("Login as: ", "");
             }
         }
-        this.editor = new CodeEditor("editor", 600, 500, playerId, this);
+        this.editor = new CodeEditor("editor", 600, 500, this);
         this.map = new Map(this.display, this);
         this.objects = this.getListOfObjects();
 
@@ -629,7 +629,7 @@ function Game(debugMode, startLevel) {
         }
     };
 }
-function CodeEditor(textAreaDomID, width, height, playerId, game) {
+function CodeEditor(textAreaDomID, width, height, game) {
     var symbols = {
         'begin_line':'#BEGIN_EDITABLE#',
         'end_line':'#END_EDITABLE#',
@@ -1081,7 +1081,7 @@ function CodeEditor(textAreaDomID, width, height, playerId, game) {
 
     this.createGist = function () {
         var lvlNum = game._currentLevel;
-        var filename = playerId + '-untrusted-lvl' + lvlNum + '-solution.js';
+        var filename = game._playerId + '-untrusted-lvl' + lvlNum + '-solution.js';
         var description = 'Solution to level ' + lvlNum + ' in Untrusted';
         var data = {
             'files': {},

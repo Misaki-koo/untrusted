@@ -1,4 +1,4 @@
-function CodeEditor(textAreaDomID, width, height, playerId, game) {
+function CodeEditor(textAreaDomID, width, height, game) {
     var symbols = {
         'begin_line':'#BEGIN_EDITABLE#',
         'end_line':'#END_EDITABLE#',
@@ -450,7 +450,7 @@ function CodeEditor(textAreaDomID, width, height, playerId, game) {
 
     this.createGist = function () {
         var lvlNum = game._currentLevel;
-        var filename = playerId + '-untrusted-lvl' + lvlNum + '-solution.js';
+        var filename = game._playerId + '-untrusted-lvl' + lvlNum + '-solution.js';
         var description = 'Solution to level ' + lvlNum + ' in Untrusted';
         var data = {
             'files': {},
