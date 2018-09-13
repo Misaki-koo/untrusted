@@ -111,10 +111,14 @@ function Game(debugMode, startLevel) {
 
         // Initialize editor, map, and objects and playerId
         this._playerId = "";
+        var forbiddenIdList = ['root', 'null', 'admin', 'administrator'];
 
         function check_playerId(id) {
             if (id === "") {
                 return false;
+            } else if (forbiddenIdList.indexOf(id) >= 0) {
+                prompt("No " + id + " !");
+                return false
             } else if (id) {
                 return true;
             } else {
@@ -126,7 +130,7 @@ function Game(debugMode, startLevel) {
             if (check_playerId(this._playerId)) {
                 break;
             } else {
-                this._playerId = prompt("Player ID: ", "");
+                this._playerId = prompt("Player name: \n Note: Please use your favorite name instead of 'root' or 'null' etc.", "");
             }
         }
         this.editor = new CodeEditor("editor", 600, 500, this);
